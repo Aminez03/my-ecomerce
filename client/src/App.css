@@ -1,0 +1,811 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;1,400&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Noto+Sans:ital,wght@0,300;1,400&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Emblema+One&family=Fredericka+the+Great&family=Nabla&family=Noto+Sans:ital,wght@0,300;1,400&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Emblema+One&family=Fredericka+the+Great&family=Noto+Sans:ital,wght@0,300;1,400&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Emblema+One&family=Fredericka+the+Great&family=Noto+Sans:ital,wght@0,300;1,400&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Bungee+Shade&family=Concert+One&family=Emblema+One&family=Fira+Sans+Condensed:ital,wght@1,300;1,400&family=Fredericka+the+Great&family=Itim&family=Lobster&family=Noto+Sans:ital,wght@0,300;1,400&family=Overpass:wght@500&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Rubik:ital@0;1&family=Solway:wght@400;500&family=Walter+Turncoat&display=swap');
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Nav bar  */
+.header {
+  position: sticky;
+  top: 0;
+
+  box-shadow: rgba(3, 1, 12, 0.505) 3px 8px 10px, rgba(246, 251, 254, 0.23) 0px 3px 6px;
+  opacity: 1!important;
+  z-index: 4;
+
+
+}
+#navbar{
+  background-color: white;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Emblema+One&family=Fira+Sans+Condensed:ital,wght@1,300;1,400&family=Fredericka+the+Great&family=Noto+Sans:ital,wght@0,300;1,400&family=Overpass:wght@500&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,700;1,400&family=Solway:wght@400;500&family=Walter+Turncoat&display=swap');
+.ecomerce{
+
+  font-size: 35px!important;
+  font-family: 'Rubik', sans-serif;
+  text-align: start;
+
+  margin-left: -200px;
+  color: #174882 !important;
+  
+}
+#search{
+  margin-left: -1150px;
+  width: 420px;
+
+}
+.search{
+  width: 320px;
+  margin-left: -175px;
+
+
+ 
+}
+#basic-nav-dropdown{
+  background-color: SkyBlue;
+  border: solid rgb(64, 174, 248) 2px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  width: 110px;
+  height: 35px;
+ text-decoration: none;
+ padding-top: 2px;
+  font-size: 16px;
+  line-height: 24px;
+  margin-right:1100px;
+
+
+
+}
+#offcanvasNavbar{
+  height: 300px;
+  margin-top: 140px;
+  width: 300px;
+
+}
+#offcanvasNavbarLabel{
+  margin-left: 50px;
+  font-size: 30px!important;
+  font-family: 'Rubik', sans-serif;
+  color: #174882;
+
+
+}
+
+#navlink{
+
+  font-size: 25px!important;
+  font-family: 'Rubik', sans-serif;
+  color: #174882;
+  padding-left: 10px;
+  width: 500px; 
+ 
+  text-align: start;
+  margin-left: -15px;
+  
+
+
+
+}
+#navlink:hover{
+  cursor: pointer;
+  background-color: #bfc0dd!important;
+
+
+}
+
+
+
+
+
+
+
+.all_nave {
+  display: flex;
+  justify-content: space-between;
+  background-color: #007393;
+ 
+}
+
+.nave {
+  display: flex;
+  justify-content: space-between;
+  margin-left: -400px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  width: 15rem;
+  position: relative;
+
+}
+
+
+
+/* panier icon */
+.btnCartCount {
+  width: 50px;
+  height: 50px;
+  color: rgb(255, 5, 5);
+  /* background: black; */
+  border-radius: 15px;
+  transform: rotate(45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  /*  position: fixed;  */
+  cursor: pointer;
+  right: 1rem;
+  background-color: #5cc8e6;
+  font-size: 25px;
+ 
+}
+
+.btnCartCount .count {
+  position: absolute;
+  background: rgb(245, 242, 242);
+margin-left: -30px;
+  margin-top: 30px;
+  transform: rotate(-45deg);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  
+}
+.btnCartCount i {
+  transform: rotate(-45deg);
+  width: 0.8rem;
+}
+#username{
+  font-size: 25px;
+  margin-left: -20px;
+  margin-top: -8px;
+  color: #262481;
+  font-weight: 500;
+ 
+}
+#logout{
+  font-size:20px;
+  color: rgb(12, 12, 12);
+  font-weight: 600;
+ 
+  margin-left: 10px;
+
+}
+.buttonsignup{
+  margin-left: -10px;
+  margin-top: 5px;
+  width: 120px;
+  padding: 10px;
+  border-radius: 10px ;
+  color: #1715ae;
+  border-color: #1715ae;
+}
+.buttonsignup:hover{
+  background-color: #2d6194;
+  color: white;
+  text-decoration: underline;
+
+}
+#buttonlogin{
+  padding-top: 10px;
+  font-size: 20px;
+  padding-left: 20px;
+  color: #262481;
+  font-weight: 400;
+  margin-top: 5px;
+  width: 120px;
+
+}
+
+
+
+
+/* login form  */
+#Login{
+  background: linear-gradient(110deg, #96b0f9 60%, #9b9dfb 60%);
+  height:640px;
+  width: 100%;
+  position: absolute;
+}
+.login_Form {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 12px; 
+  border: solid rgb(30, 30, 190);
+  width: 20rem;
+  background-color: white;
+ margin-left: 600px;
+ margin-top: 70px;
+ box-shadow: rgb(55, 81, 109) 0px 20px 30px -10px;
+ background-color: rgb(224, 224, 240);
+}
+.titleLogin{
+  font-size:30px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 600;
+  color: #4a6792;
+}
+/* signup from */
+#signUp{
+  background: linear-gradient(110deg, #96b0f9 60%, #9b9dfb 60%);
+
+  height: 640px;
+  width: 100%;
+  position: absolute;
+
+}
+.signUp_Form {
+position: relative;
+  padding: 0.5rem;
+  margin-top: 50px;
+  border-radius: 12px; 
+  border: solid rgb(30, 30, 190);
+  width: 20rem;
+  background-color: white;
+  margin-left: 600px;
+ height: 550px;
+ box-shadow: rgb(55, 81, 109) 0px 20px 30px -10px;
+ background-color: rgb(224, 224, 240);
+}
+.titleSignUp{
+  font-size:30px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 600;
+  color: #4a6792;
+}
+
+/* addproduct */
+#addproduct{
+  margin-top: 25px;
+  background-color: rgb(164, 164, 45);
+  border-color: rgb(232, 232, 196);
+}
+#form_adding_product{
+    width: 800px;
+    height: 620px;
+    margin-top: 70px;
+    background: linear-gradient(110deg, #eee0b5 60%, #e8e099 60%);
+
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Emblema+One&family=Fredericka+the+Great&family=Noto+Sans:ital,wght@0,300;1,400&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
+.adding-product{
+  font-family: 'Bungee Shade', cursive;
+  color: rgb(82, 82, 25);
+  padding-left: 150px;
+
+ 
+
+}
+.btn-add{
+  display: flex;
+  justify-content: space-around;
+
+}
+ /* product list  */
+.listProduct {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 1518px;
+  margin-left: -220px;
+  padding-left: 80px;
+  padding-top: 20px;
+  padding-right: 100px;
+  background-color: rgb(224, 222, 222);
+
+ 
+
+}
+.ourproducts{
+  color: #333;
+  font-family: 'Rubik', sans-serif;
+    font-size: 3rem;
+    font-weight: 100;
+    line-height: 1.5;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 1600px;
+
+}
+.categorie ul{
+  list-style-type :none;
+  display: flex;
+  margin-left: 261px;
+  width: 640px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-right: 100px;
+  padding: 5px;
+  margin-right: 300px;
+  border-bottom: solid 1px;
+  justify-content: space-around;
+ 
+
+
+}
+
+
+
+.categorie li{
+text-align: center;
+
+
+}
+.categorie li:hover{
+  border-radius: 10px;
+  border-bottom: solid rgb(1, 10, 253);
+  background-color: rgb(206, 206, 248);
+  cursor: pointer;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* product card */
+.promo{
+  display: flex;
+  justify-content: space-between;
+  width: 22rem;
+
+}
+.promo1{
+  width: 80px;
+  border-top-left-radius: 10px;
+  background-color: rgb(160, 153, 153);
+  color: rgb(254, 5, 5);
+  height: 30px;
+  font-weight: 600;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+
+ 
+
+}
+.promo2{
+  width: 80px;
+  height: 30px;
+  background-color:rgb(125, 122, 122);
+  color: white;
+  border-top-right-radius: 10px;
+  font-weight: 600;
+  font-size: 22px;
+
+
+}
+
+
+
+.productCard {
+  margin-left: 30px;
+  margin-bottom:50px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border:solid;
+  z-index: 1;
+  position: relative;
+  margin-top: 10px;
+
+
+
+}
+.productCard:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 16px 14px 28px, rgba(0, 0, 0, 0.22) 0px 16px 10px;
+  cursor: pointer;
+  
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Bungee+Shade&family=Emblema+One&family=Fira+Sans+Condensed:ital,wght@1,300;1,400&family=Fredericka+the+Great&family=Noto+Sans:ital,wght@0,300;1,400&family=Overpass:wght@500&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Solway:wght@400;500&family=Walter+Turncoat&display=swap');
+.title{
+  color: rgb(78, 76, 76)!important;
+  width: '10rem';
+  height:"4rem" ;
+  font-weight: 500!important;
+  font-family: 'Average Sans', sans-serif;
+  font-size: 30px!important;
+
+
+}
+.priceCard{
+  color: rgb(166, 26, 26);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  width: 200px; 
+  /* background-color: rgb(158, 153, 153); */
+  margin-left: 40px;
+  margin-top: 10px;
+
+  
+}
+.priceCardPromo{
+
+  color: rgb(166, 26, 26);
+
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.Promotion{
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  margin-right: 10px;
+  /* background-color: rgb(138, 132, 132); */
+  width: 220px;
+  height: 26px;
+  padding-left: 40px;
+  margin-top: 10px;
+  z-index: 2;
+
+
+ 
+}
+
+
+
+
+
+
+.btns_user,
+.btns_admin  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  z-index: 3;
+
+
+}
+
+
+
+
+
+
+
+
+/* Men product and Women product*/
+
+
+/* .listProductMen,.listProductwomen {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background-color: rgb(224, 222, 222);
+
+
+
+  
+} */
+
+/* .productCardMen {
+  margin-top: 1rem;
+} */
+
+.like {
+  color: red;
+}
+
+/* .productCardWomen {
+  margin-top: 1rem;
+} */
+
+.form_update{
+  position: absolute;
+  z-index: 2;
+  border: none;
+
+  
+}
+
+
+#form_update_product{
+  width: 800px;
+  height: 500px;
+  margin-top: 100px;
+  background: linear-gradient(110deg, #eee0b5 60%, #e8e099 60%);
+  border: none;
+
+
+}
+
+
+.buttoncartsignup{
+  position: relative;
+}
+
+.goSignUp{
+  width: 120px;
+  height: 40px;
+  background-color: rgb(86, 84, 84);
+  margin-top: -80px;
+  display: block;
+  color: #f9f9fe;
+  padding: 4px;
+  padding-top: 10px;
+  border-radius: 50px;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+/* detail product  */
+
+.detail {
+  width: 100%;
+  height: 1000px;
+  margin-top: -250px;
+  padding-top: 100px;
+  background: linear-gradient(
+    90deg,
+    rgb(84, 74, 74) 0%,
+    rgb(78, 78, 92) 55%,
+    rgb(171, 171, 192) 100%)
+  
+}
+.detailCard{
+  padding-top: 40px;
+  border-color: #4a6792;
+  margin-left: 200px;
+  margin-right: 250px;
+  margin-top: 200px;
+  margin-bottom: 300px;
+  padding-left: 40px;
+  padding-right: 35px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Emblema+One&family=Fira+Sans+Condensed:ital,wght@1,300;1,400&family=Fredericka+the+Great&family=Noto+Sans:ital,wght@0,300;1,400&family=Overpass:wght@500&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,700;1,400&family=Solway:wght@400;500&display=swap');
+#titleDetailproduct{
+  margin-top: -400px!important;
+  margin-left: 450px;
+
+  width: 500px;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #333;
+  font-size: 25px;
+  text-align: start;
+  font-weight: 600;
+  font-family: 'Solway', serif;
+}
+
+
+.detailImageCard{
+ margin-top: -10px;
+  height: '10rem';
+  width:'100px';
+  text-align: start;
+  margin-left: 10px;
+  
+
+
+}
+
+
+.priceDetailproduct{
+  text-align: start;
+  margin-left: 200px!important;
+  text-align: start;
+  padding-left: 20px;
+  background-color: blue;
+  width: 200px;
+  margin-top: 30px!important;
+
+}
+.categoryDetailproduct{
+  width: 200px;
+  margin-left:450px!important ;
+
+  
+}
+
+.descriptionDetailproduct{
+  text-align: start;
+  margin-left: 450px!important;
+  border: #222;
+  margin-top: 0px!important;
+  font-size: 16px!important;
+  color: #777;
+
+}
+.btnback{
+  background-color: #1715ae;
+  text-align: end !important;
+}
+
+.addDetailbutton{
+  color: rgb(255, 0, 0);
+  font-size: 20px;
+  margin-left: 0;
+}
+.Detailbutton{
+  margin-left: 400px!important;
+  margin-top: 40px!important;
+}
+
+
+
+.ui.cards > .card > .image {
+  height: 250px;
+  padding: 20px;
+  background: #fff;
+  margin: auto;
+}
+.ui.cards > .card > .image > img {
+  height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+.ui.cards > .card > .content > .header {
+  height: 48px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.ui.cards > .card > .content > .description {
+  height: 36px;
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+.ui.cards > .card .meta.price {
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+.ui.cards > .card .meta.price > a {
+  font-size: 1.3rem;
+  color: #222;
+}
+
+.ui.menu.fixed {
+  height: 60px;
+  padding-top: 15px;
+}
+
+.ui.grid.container {
+  margin-top: 45px;
+}
+
+.ui.grid > .row {
+  background: #fff;
+}
+.ui.grid > .row > .column.lp {
+  padding: 20px 40px 20px 20px;
+  align-self: flex-start !important;
+}
+.ui.grid > .row > .column.rp {
+  padding: 20px 20px 20px 40px;
+  text-align: left;
+  align-self: flex-start !important;
+}
+
+.ui.grid > .row > .column > img,
+.ui.grid > .row > img {
+  height: 100%;
+}
+.ui.placeholder .header:not(:first-child):before,
+.ui.placeholder .image:not(:first-child):before,
+.ui.placeholder .paragraph:not(:first-child):before {
+  display: none;
+}
+
+.ui.label,
+.ui.labels .label {
+  font-size: 22px;
+}
+
+.column.rp h1 {
+  color: #333;
+}
+.column.rp p {
+  font-size: 18px;
+  color: #777;
+}
+.ui.placeholder.segment .column .button,
+.ui.placeholder.segment .column .field,
+.ui.placeholder.segment .column textarea,
+.ui.placeholder.segment .column > .ui.input {
+  background-color: #ff3e6c;
+  border: 1px solid #ff3e6c;
+  color: #fff;
+  font-size: 18px;
+  margin-left: 0;
+}
+
+/* cart */
+.cartItems{
+  margin-top: 50px;
+}
+
+
+
+/* Fouter  */
+.socialMed{
+  text-align:center;
+  margin-top: -50px;
+  padding-top: -50px;
+  width: 100%;
+  height: 50%!important ;
+  background-color: #BDC2F2;
+}  
+.socialMed a{
+  color:black;
+}
+.socialMed i{
+    font-size: 2em;
+    position: relative;
+    bottom:0;
+    margin:3%;
+}
+.socialMed i:hover{
+  color: #1715ae;
+}
+

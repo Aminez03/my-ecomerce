@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Bungee+Shade&family=Concert+One&family=Emblema+One&family=Fira+Sans+Condensed:ital,wght@1,300;1,400&family=Fredericka+the+Great&family=Itim&family=Lobster&family=Noto+Sans:ital,wght@0,300;1,400&family=Overpass:wght@500&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Rubik:ital@0;1&family=Solway:wght@400;500&family=Walter+Turncoat&display=swap');
+.contact{
+margin-top: -20px;
+  background-color: rgb(224, 222, 222);
+  height: 580px;
+
+
+}
+
+.contact h3{
+  text-align: center;
+  color: #d41515;
+text-shadow:(1px 1px 0 rgba(white, 1));
+font-family: 'Rubik', sans-serif;
+font-size: 30px;
+font-weight: 400;
+
+}
+.contact form {
+  background-color: rgb(216, 173, 173);
+   max-width: 600px;
+   text-align: center;
+   margin: 20px auto;
+   padding-top: 20px;
+  height: 500px;
+  border-radius: 30px;
+
+  
+}
+/* .contact  input, textarea :focus {
+     box-shadow:10 10px 2px rgba(red, 4);
+     /* background-color: yellow; */
+     /* border: 1px solid blue; */
+
+.contact input:focus {
+    background-color:rgb(253, 248, 248);
+    border: 1px solid red;
+
+  }
+.contact textarea:focus{
+    background-color:rgb(253, 248, 248);
+    border: 1px solid red;
+
+}
+.contact  input, textarea {
+    border:0; outline:0;
+    padding: 1em;
+  border-radius:8px;
+    display: block;
+    width: 80%;
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+    font-family: 'Merriweather', sans-serif;
+  box-shadow:0 1px 1px rgba(black, 0.1);
+    resize: none;
+    margin-left: 4em;
+   
+ }
+  
+ .contact #input-submit {
+     color: white; 
+     background: red;
+     cursor: pointer;
+    
+    
+  }
+  #input-submit:hover {
+    box-shadow:(0 1px 1px 1px rgba(#aaa, 0.6)); 
+ }
+  
+ .contact textarea {
+      height: 126px;
+  }
+
+
+
+.half {
+  float: left;
+  width: 48%;
+  margin-bottom: 1em;
+}
+
+.right { width: 50%; }
+
+.left {
+     margin-right: 2%; 
+}
+
+
+@media (max-width: 480px) {
+  .half {
+     width: 100%; 
+     float: none;
+     margin-bottom: 0; 
+  }
+}
+
+
+/* Clearfix */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}

@@ -1,0 +1,109 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Bungee+Shade&family=Concert+One&family=Emblema+One&family=Fira+Sans+Condensed:ital,wght@1,300;1,400&family=Fredericka+the+Great&family=Itim&family=Lobster&family=Noto+Sans:ital,wght@0,300;1,400&family=Overpass:wght@500&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Solway:wght@400;500&family=Walter+Turncoat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Bungee+Shade&family=Concert+One&family=Emblema+One&family=Fira+Sans+Condensed:ital,wght@1,300;1,400&family=Fredericka+the+Great&family=Itim&family=Lobster&family=Noto+Sans:ital,wght@0,300;1,400&family=Overpass:wght@500&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Rubik:ital@0;1&family=Solway:wght@400;500&family=Walter+Turncoat&display=swap');
+
+h1 {
+    color: #333;
+  font-family: 'Rubik', sans-serif;
+    font-size: 3rem;
+    font-weight: 100;
+    line-height: 1.5;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 1600px;
+    background-color: rgb(189, 194, 242);
+  }
+  
+  h1 span {
+    font-size: 30px;
+    margin-left: 460px;
+    margin-right: 1000px;
+    width: 500px;
+  }
+  
+  .message {
+    background-color: rgb(112, 108, 244);
+    color: white;
+    display: block;
+    font-weight: 400;
+    overflow: hidden;
+    position: absolute;
+    padding-left: 0.5rem;
+    width: 800px;
+    margin-left: 800px;
+    animation: openclose 5s ease-in-out infinite;
+  }
+  
+  .word1, .word2, .word3 {
+    font-family: tahoma;
+  }
+  
+  @keyframes openclose {
+    0% {
+      top: 0.1rem;
+      width: 0;
+    }
+    5% {
+      width: 0;
+    }
+    15% {
+      width: 250px;
+    }
+    30% {
+      top: 0.1rem;
+      width: 250px;
+    }
+    33% {
+      top: 0.1rem;
+      width: 0;
+    }
+    35% {
+      top: 0.1rem;
+      width: 0;
+    }
+    38% {
+      top: -4.5rem;
+      
+    }
+    48% {
+      top: -4.5rem;
+      width: 250px;
+    }
+    62% {
+      top: -4.5rem;
+      width: 250px;
+    }
+    
+  66% {
+    top: -4.5rem;
+    width: 0;
+    text-indent: 0;
+  }
+  71% {
+    top: -9rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  86% {
+    top: -9rem;
+    width: 285px;
+  }
+  95% {
+    top: -9rem;
+    width: 285px;
+  }
+  98% {
+    top: -9rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  100% {
+    top: 0;
+    width: 0;
+    text-indent: 0;
+  }
+
+}

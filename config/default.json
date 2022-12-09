@@ -1,0 +1,4 @@
+{
+    "db":"mongodb+srv://amine:0000@atlascluster.m9ix9m2.mongodb.net/my-ecommerce?retryWrites=true&w=majority",
+    "secret":"shuuu"
+}
