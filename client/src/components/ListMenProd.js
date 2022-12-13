@@ -7,8 +7,8 @@ import { getMenProd } from "../redux/action";
 import { Link } from "react-router-dom";
 
 
-const ListMenProd = () => {
-  const { products } = useSelector((state) => state.product);
+const ListMenProd = ({products}) => {
+  // const { products } = useSelector((state) => state.product);
   
 
   const dispatch = useDispatch();

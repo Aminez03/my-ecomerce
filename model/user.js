@@ -7,6 +7,10 @@ const userSchema=new Schema({
     password:String,
     adresse:String,
     telephone:String,
+    blocking:{
+        type:String,
+        default:"no"
+    },
     userRole:{
         type:String,
         roles:["user","admin"],

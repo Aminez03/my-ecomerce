@@ -1,9 +1,10 @@
-import { GET_PROFILE, GET_PROFILE_FAIL, GET_PROFILE_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, SIGN_UP, SIGN_UP_FAIL, SIGN_UP_SUCCESS } from "./actionTypes";
+import { BLOCKUSER, DELETEUSER, GET_ALLUSERS, GET_PROFILE, GET_PROFILE_FAIL, GET_PROFILE_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, SIGN_UP, SIGN_UP_FAIL, SIGN_UP_SUCCESS } from "./actionTypes";
 
 
 
 
 const init ={
+    users:null,
     user:null,
     errors:null,
     loading:false,
@@ -23,13 +24,15 @@ export const userReducer=(state=init,{type,payload})=>{
         case SIGN_UP_SUCCESS:
              return {...state,
                  loading:false,
-                 user:payload,
-                  errors:null};
+                 user:payload.user,
+                 token:payload.token,
+                 isAuth:true,
+                errors:null};
         case LOGIN_SUCCESS:
             return {
             ...state,
             loading:false,
-            user:payload.user,
+            user:payload,
             token:payload.token,
             isAuth:true};
         case GET_PROFILE_SUCCESS:
@@ -48,6 +51,22 @@ export const userReducer=(state=init,{type,payload})=>{
                 ...state,
                 loading:false,
                 errors:payload};
+
+        case GET_ALLUSERS:
+            return{
+                ...state,
+                users:payload,
+                loading:false,
+                errors:null,
+            }
+        case DELETEUSER:
+                return {
+                    ...state, users:state.users.filter(el => el._id !== payload)
+                }
+        case BLOCKUSER:
+            return {
+                ...state, users:state.users.map( el => el._id === payload._id ?payload :el)
+            }
         case LOGOUT:
           return {
               state

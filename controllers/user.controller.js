@@ -5,13 +5,13 @@ const config=require("config");
 const secret=config.get("secret");
 
 exports.signUp=async(req,res)=>{
-    const {fullName,email,password,adresse,telephone,userRole}=req.body;
+    const {fullName,email,password,adresse,telephone,userRole,blocking}=req.body;
     try{
         //verfier existing user avec email
         const exsitingUser= await User.findOne({email});
         if(exsitingUser){res.status(401).json({msg:"User is allready exist "})}
         //ADD NEW USER
-        const newUser= new User({fullName,email,password,adresse,telephone,userRole})
+        const newUser= new User({fullName,email,password,adresse,telephone,userRole,blocking})
         // cryptage password
         var salt = await bc.genSalt(10);
         var hash = await bc.hashSync(password, salt);
@@ -23,7 +23,8 @@ exports.signUp=async(req,res)=>{
             name:newUser.fullName,
             email:newUser.email,
             adresse:newUser.adresse,
-            telephone:newUser.telephone
+            telephone:newUser.telephone,
+            blocking:newUser.blocking
         };
         const token = jwt.sign(payload,secret);
         res.status(200).send({
@@ -36,6 +37,7 @@ exports.signUp=async(req,res)=>{
             adresse: newUser.adresse,
             telephone:newUser.telephone,
             userRole:newUser.userRole,
+            blocking:newUser.blocking
         },
           });
         // res.send(newUser)
@@ -58,7 +60,9 @@ exports.LogIn=async(req,res)=>{
             name:user.fullName,
             email:user.email,
             adresse:user.adresse,
-            telephone:user.telephone
+            telephone:user.telephone,
+            blocking:user.blocking
+
         };
         const token = jwt.sign(payload,secret);
         res.status(200).send({
@@ -70,7 +74,9 @@ exports.LogIn=async(req,res)=>{
             password: user.password,
             adresse: user.adresse,
             telephone:user.telephone,
-            userRole:user.userRole
+            userRole:user.userRole,
+            blocking:user.blocking
+            
         },
           });
      
@@ -82,3 +88,38 @@ exports.LogIn=async(req,res)=>{
 exports.auth=(req,res)=>{
     res.send(req.user)
 }
+
+
+exports.getAllUser = async (req, res) => {
+    try {
+      const allUsers = await User.find();
+      allUsers
+        ? res.status(201).json(allUsers)
+        : res.status(401).json({ msg: "getAll error" });
+    } catch (error) {
+      res.status(501).json({ msg: error.message });
+    }
+  };
+
+  //delete one user
+  exports.deleteUser = async (req, res) => {
+    try {
+      const deleteUser = await User.findByIdAndDelete(req.params._id);
+      res.status(201).json({ msg: "user deleted successfully" });
+    } catch (error) {
+      res.status(501).json({ msg: error.message });
+    }
+  };
+  //edit user to block 
+    exports.updateUser = async (req, res) => {
+      try {
+        const updateUser = await User.findByIdAndUpdate(
+          req.params._id,
+          { ...req.body },
+          { new: true }
+        );
+        res.status(201).send(updateUser);
+      } catch (error) {
+        res.status(501).json({ msg: error.message });
+      }
+    };

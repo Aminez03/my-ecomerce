@@ -72,12 +72,12 @@ const ProductCard = ({product}) => {
         }
         
         {user && user.userRole === "admin" ? 
-        <div className="btns_admin">
+        <div className="btns_admin1">
             <Button variant="danger " onClick={() => { dispatch(removeProduct(product._id)); dispatch(getAllProducts()) }} >DELETE</Button>
             <UpdateProduct updateProd={product} />
             <Link to={`/detailProduct/${product._id}`}> <Button variant="dark"><i style={{color:"white",fontSize:'20px'}}class="fa-solid fa-magnifying-glass"></i></Button> </Link>
         </div> :
-         <div className="btns_user">
+         <div className="btns_user1">
             <Button variant="dark" onClick={()=>dispatch(addToCart(product._id, 1))} ><i style={{color:"white" , fontSize:'20px'}} className='fas fa-shopping-cart'></i></Button>
             <Link to={`/detailProduct/${product._id}`}> <Button variant="dark"><i style={{color:"white",fontSize:'20px'}}class="fa-solid fa-magnifying-glass"></i></Button> </Link>
         </div> }

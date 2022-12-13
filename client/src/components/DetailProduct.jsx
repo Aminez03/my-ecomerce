@@ -94,20 +94,14 @@ const DetailProduct = () => {
           </Typography>
 
           <Typography  >
-          <div className="ui vertical animated button Detailbutton  " tabIndex="0">
-                  <div className="hidden content ">
-
-                    <i className="shop icon addDetailbutton"></i>
-                  </div>
-                  <div className="visible content addDetailbutton "   >
-                    <button onClick={()=>dispatch(addToCart(oneProduct._id, 1))} style={{border:"none" ,backgroundColor:"Gainsboro",fontSize:"20px",color:"red"}} >Add to Cart</button></div>
-                </div>
+       
+       <button type="button" class="btn btn-danger" onClick={()=>dispatch(addToCart(oneProduct._id, 1))} style={{fontSize:"20px" ,marginLeft:'400px',marginTop:'50px'}} >Add to card </button>
           </Typography>
 
 
       </CardContent>
       <CardActions>
-          <Link to="/"><Button size="small">Back</Button></Link>
+          <Link to="/"><button type="button" class="btn btn-dark" style={{marginTop:'-50px'}}>Back</button></Link>
       </CardActions>
   </Card>
   

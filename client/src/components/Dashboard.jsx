@@ -2,11 +2,13 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserProfile, userLogOut } from '../redux/action';
 import { Button, Container, Form, FormControl, Nav, Navbar, NavDropdown, Offcanvas } from 'react-bootstrap'
+import { Link } from "react-router-dom";
 
 
 
 
-const Dashboard = () => {
+
+const Dashboard = ({searching,handleSearch}) => {
   const { user } = useSelector((state) => state.user);
   const { cartItems } = useSelector((state) => state.cart);
 
@@ -44,6 +46,8 @@ const Dashboard = () => {
                                   placeholder="Search"
                                   className="me-2"
                                   aria-label="Search"
+                                  value={searching}
+                                  onChange={e=>handleSearch(e.target.value)}
                               
                               />
                             </div>
@@ -90,20 +94,23 @@ const Dashboard = () => {
 
                       </div>}
 
-                     { user ?<Nav>
-                          <div className='btnCartCount' >
-                              <div className='count'>{Object.keys(cartItems).length}</div>
-                              <Nav.Link href='/cart' >
-                                  <i className='fas fa-shopping-cart'></i>
-                              </Nav.Link>
-                          </div>
-                      </Nav> : <Nav>
+                     { user && user.userRole === "admin"?
+                     <Nav>
                           <div className='btnCartCount' >
                               <div className='count'> 0</div>
                               <Nav.Link href='/login' >
                                   <i className='fas fa-shopping-cart'></i>
                               </Nav.Link>
                           </div>
+                      </Nav> : 
+                      <Nav>
+                        <div className='btnCartCount' >
+                              <div className='count'>{Object.keys(cartItems).length}</div>
+                              <Nav.Link href='/cart' >
+                                  <i className='fas fa-shopping-cart'></i>
+                              </Nav.Link>
+                          </div>
+                          
                       </Nav> }
 
                   </div>
@@ -120,9 +127,9 @@ const Dashboard = () => {
 
                       <Offcanvas.Body>
                           <Nav className="justify-content-end flex-grow-1 pe-3">
-                              <Nav.Link href="/" ><div id="navlink">Home</div> </Nav.Link>
-                              <Nav.Link href="/men" ><div id="navlink">Men</div></Nav.Link>
-                              <Nav.Link href="/women" ><div id="navlink">Women</div></Nav.Link>
+                              <Link  id="linkparent"  to="/"><div id="navlink">Home</div> </Link>
+                              <Link id="linkparent" to="/men"><div id="navlink">Men</div></Link>
+                              <Link id="linkparent" to="/women"><div id="navlink">Women</div></Link>
 
                               
                           </Nav>

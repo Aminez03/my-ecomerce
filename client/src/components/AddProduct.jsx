@@ -90,7 +90,7 @@ function AddProduct() {
     <div>
       <Button onClick={openModal} id="addproduct"> <i class="fa-solid fa-plus"></i> Add Product</Button>
 
-      <Modal
+      <Modal className="form_addproduct" 
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
@@ -99,43 +99,43 @@ function AddProduct() {
         <Form onSubmit={handleSubmit} id="form_adding_product" >
           <h2 className='adding-product'>Adding product </h2>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Product name:</Form.Label>
-            <Form.Control type="text" placeholder='Product name' value={title} onChange={(e) => setTitle(e.target.value)} />
+          <Form.Label style={{width:"220px", color:'black', fontSize:'14px',fontWeight:"bold"}}>Product name: </Form.Label>
+            <Form.Control style={{width:"200px", marginLeft:"100px"}}  type="text" placeholder='Product name' value={title} onChange={(e) => setTitle(e.target.value)} />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Price:</Form.Label>
+          <Form.Label style={{width:"200px", color:'black', fontSize:'15px',fontWeight:"bold"}}>Price:</Form.Label>
 
-            <Form.Control type="text" placeholder='price' value={price} onChange={(e) => setPrice(e.target.value)} />
+            <Form.Control style={{width:"200px", marginLeft:"100px"}} type="text" placeholder='price' value={price} onChange={(e) => setPrice(e.target.value)} />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Category</Form.Label>
+          <Form.Label style={{width:"200px", color:'black', fontSize:'15px',fontWeight:"bold"}}>Category</Form.Label>
 
-            <Form.Control type="text" placeholder='category' value={category} onChange={(e) => setCategory(e.target.value)} />
+            <Form.Control style={{width:"200px", marginLeft:"100px"}} type="text" placeholder='category' value={category} onChange={(e) => setCategory(e.target.value)} />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Promotion:</Form.Label>
+          <Form.Label style={{width:"200px", color:'black', fontSize:'15px',fontWeight:"bold"}}>Promotion:</Form.Label>
 
-            <Form.Control type="text" placeholder='promotion' value={promo} onChange={(e) => setPromo(e.target.value)} />
+            <Form.Control style={{width:"200px", marginLeft:"100px"}} type="text" placeholder='promotion' value={promo} onChange={(e) => setPromo(e.target.value)} />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Description:</Form.Label>
+          <Form.Label style={{width:"200px", color:'black', fontSize:'15px',fontWeight:"bold"}}>Description:</Form.Label>
 
-            <Form.Control type="text" placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
+            <Form.Control style={{width:"200px", marginLeft:"100px"}} type="text" placeholder='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
           </Form.Group>
 
           {/* uploadfile */}
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label> Image:</Form.Label>
-            <Form.Control type="file" onChange={fileSelectedHandler} />
+          <Form.Label style={{width:"200px", color:'black', fontSize:'15px',fontWeight:"bold"}}> Image:</Form.Label>
+            <Form.Control style={{width:"400px", marginLeft:"50px"}} type="file" onChange={fileSelectedHandler} />
           </Form.Group>
 
-          <div className='btn-add' >
-          <div id='cancel'><Button variant="secondary" onClick={() => closeModal()}><i class="fa-solid fa-ban"></i> Cancel </Button></div>
-            <div id='add'><button  class="btn btn-success" type="submit" ><i class="fa-solid fa-plus"></i> Add</button></div>
+          <div className='btn-add' style={{marginLeft:'50px'}} >
+          <div id='cancel' style={{marginLeft:'50px'}}><Button variant="secondary" onClick={() => closeModal()}><i class="fa-solid fa-ban"></i> Cancel </Button></div>
+            <div id='add' style={{marginLeft:'50px'}}><button  class="btn btn-success" type="submit" ><i class="fa-solid fa-plus"></i> Add</button></div>
           </div>
         </Form>
       </Modal>

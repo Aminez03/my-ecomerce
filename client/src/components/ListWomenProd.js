@@ -5,8 +5,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { getWomenProd } from "../redux/action";
 import { Link } from "react-router-dom";
 
-const ListWomenProd = () => {
-  const { products } = useSelector((state) => state.product);
+const ListWomenProd = ({products}) => {
+  // const { products } = useSelector((state) => state.product);
 
   const dispatch = useDispatch();
 

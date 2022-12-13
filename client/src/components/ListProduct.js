@@ -5,13 +5,16 @@ import {  Carousel, Col, Container, Row } from "react-bootstrap";
 import ProductCard from './ProductCard';
 import TableProductAdmin from './TableauProductAdmin';
 import { Link } from 'react-router-dom';
+import ContactUs from './ContactUs';
+import Fouter from './Fouter';
 
 
 
 
-const ListProduct = () => {
+
+const ListProduct = ({products }) => {
     //store
-  const { products } = useSelector((state) => state.product);
+  // const { products } = useSelector((state) => state.product);
   const { user } = useSelector((state) => state.user);
 
   
@@ -41,7 +44,7 @@ const ListProduct = () => {
   return (
     <div>
        {user && user.userRole === "admin" ?
-      <TableProductAdmin product={products} />:
+      <TableProductAdmin product={products}  />:
       <div>
 
         <div className="carousels">
@@ -98,10 +101,8 @@ const ListProduct = () => {
                 <Col sm={1}></Col>
               </Row>
             </Container>
-       
-
-
-
+            <ContactUs/>
+            <Fouter/>
       </div>
       }
 

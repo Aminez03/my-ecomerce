@@ -15,6 +15,8 @@ import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
+  const { user } = useSelector((state) => state.user);
+
     const { cartItems } = useSelector((state) => state.cart);
     const [result, setResult] = useState();
 
@@ -80,7 +82,7 @@ const Cart = () => {
     }, [total, cartItems,result]);
 
     const dispatch = useDispatch();
-
+    const goSignUp =()=>alert("   ⚠️Create account!    ")
 
     return (
         <div className='cartItems'>
@@ -136,9 +138,19 @@ const Cart = () => {
                         <td></td>
                         <td style={{fontSize:"30px" , fontWeight:"600"}}>Total Price</td>
                         <td style={{fontSize:"25px" , fontWeight:"600"}}>{`${total} $`}</td>
-                        <Button  size="large" type="button" variant="contained" color="primary">
-                        <Link to="/Checkout" >Checkout </Link>
-                        </Button>
+            
+
+                        { user && user.userRole === "user"?
+                        <Link to="/Checkout" > 
+                        <button type="button" class="btn btn-danger" style={{fontSize:"20px" ,marginLeft:'400px'}} >   Checkout</button>
+                        </Link>:
+                        <Link to='/login'>
+                            <button type="button"  onClick={goSignUp} class="btn btn-danger" style={{fontSize:"20px" ,marginLeft:'400px',color:"white", backgroundColor:"#C82333"}} >   Checkout</button>
+                        </Link>
+                        
+
+}
+                      
                         <td></td>
                         
                     </tr>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { userSignUp } from '../redux/action';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Navigate } from 'react-router-dom';
 
 
 const Signup = () => {
@@ -24,7 +25,11 @@ const Signup = () => {
     <div id='signUp'>
       {loading ? (
         <h1>Loading ...</h1>
-      ) : (
+      ) :
+      localStorage.getItem("token")?  <Navigate to="/" /> 
+      
+      
+      : (
         <div > 
         <Form onSubmit={handleSubmit} className='signUp_Form' >
 

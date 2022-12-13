@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CARD_ADD_ITEM, CARD_ADD_ITEM_FAIL, CARD_ADD_ITEM_SUCCESS, CARD_REMOVE_ITEM,INCREMENT, DECREMENT, DETAILPRODUCT_FAIL, DETAILPRODUCT_SUCCESS, GET_PROFILE, GET_PROFILE_FAIL, GET_PROFILE_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, SIGN_UP, SIGN_UP_FAIL, SIGN_UP_SUCCESS } from "./actionTypes"
+import { CARD_ADD_ITEM, CARD_ADD_ITEM_FAIL, CARD_ADD_ITEM_SUCCESS, CARD_REMOVE_ITEM,INCREMENT, DECREMENT, DETAILPRODUCT_FAIL, DETAILPRODUCT_SUCCESS, GET_PROFILE, GET_PROFILE_FAIL, GET_PROFILE_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, SIGN_UP, SIGN_UP_FAIL, SIGN_UP_SUCCESS, GET_ALLUSERS, DELETEUSER, BLOCKUSER } from "./actionTypes"
 import {ADDPRODUCT, ADDPRODUCT_FAIL, ADDPRODUCT_SUCCESS, DELETEPRODUCT, DETAILPRODUCT, GETPRODUCTS, GET_MEN_PRODUCT, GET_WOMEN_PRODUCT, UPDATEPRODUCT} from "./actionTypes"
 
 // action user 
@@ -7,6 +7,7 @@ export const userSignUp=(newUser)=>async(dispatch)=>{
     dispatch({type:SIGN_UP});
     try {
         const res=await axios.post("/user/signUp",newUser);
+        localStorage.setItem("token",res.data.token)
         dispatch({
             type:SIGN_UP_SUCCESS,
             payload:res.data
@@ -64,6 +65,56 @@ export const getUserProfile=()=>async(dispatch)=>{
         })
     }
 }
+//get all users
+export const getAllUsers = () => async(dispatch) => {
+  try {
+    const res = await axios.get("/user/getAllUser");
+    dispatch (
+      {
+      type : GET_ALLUSERS,
+      payload : res.data
+      }
+    );
+  } catch (error) {
+    alert("get all users error")
+  }
+};
+
+
+//delete user
+export const removeUser = (_id) => async(dispatch) => {
+  try {
+    const res = axios.delete(`/user/deleteOneUser/${_id}`);
+    dispatch(
+      {
+        type : DELETEUSER,
+        payload : res.data
+      }
+    )
+  } catch (error) {
+    alert("delete user error")
+  }
+}
+
+//edit user
+export const editeUser = (user) => async(dispatch) => {
+  try {
+      const res = await axios.put(`/user/updateUser/${user._id}`, user);
+      dispatch(
+          {
+              type : BLOCKUSER,
+              payload : res.data
+          }
+      )
+  } catch (error) {
+      alert("update user error");
+  }
+};
+
+
+
+
+//log out
 export const userLogOut = () => {
 
     localStorage.clear()
@@ -74,6 +125,9 @@ export const userLogOut = () => {
   }
   
   }
+
+
+
 
 
 // action product
@@ -195,6 +249,12 @@ export const removeProduct = (_id) => async(dispatch) => {
     alert("delete product error")
   }
 }
+
+
+
+
+
+
 
 // action cart 
 

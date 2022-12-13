@@ -18,6 +18,7 @@ import Annonce from './components/Annonce';
 import ContactUs from './components/ContactUs';
 import Fouter from './components/Fouter'
 import Checkout from './components/Checkout';
+import { useState } from 'react';
 
 
 
@@ -25,26 +26,31 @@ import Checkout from './components/Checkout';
 
 function App() {
   const { user } = useSelector((state) => state.user);
+  const { products } = useSelector((state) => state.product);
+
+  const [searching, setSearching] = useState("")
+  //edit search
+  const handleSearch=(y)=>setSearching(y);
+
 
   return (
     <div className="App">
       <Router>
         <Annonce/>
-      <Dashboard/>
+      <Dashboard searching={searching} handleSearch={handleSearch}/>
       {user && user.userRole === "admin" ? <AddProduct /> : null }
        <Routes>
          <Route path="/" element={<div>
 
-          <ListProduct/>
-          <ContactUs/>
-          <Fouter />
+          <ListProduct products={products.filter(el=>el.title.toLocaleLowerCase().includes(searching.toLocaleLowerCase()))} />
+         
          </div>
                                   }/>
          <Route path="/Signup" element={<Signup/>}  />
          <Route path="/login" element={<Login/>}  />
-         <Route path="/profile" element={<Profile/>}/>  
-         <Route path="/men" element={<ListMenProd />} />
-         <Route path="/women" element={<ListWomenProd />} /> 
+         <Route path="/profile" element={<Profile products={products.filter(el=>el.title.toLocaleLowerCase().includes(searching.toLocaleLowerCase()))}/>}/>  
+         <Route path="/men" element={<ListMenProd products={products.filter(el=>el.title.toLocaleLowerCase().includes(searching.toLocaleLowerCase()))}/>} />
+         <Route path="/women" element={<ListWomenProd products={products.filter(el=>el.title.toLocaleLowerCase().includes(searching.toLocaleLowerCase()))}/>} /> 
          <Route path="/detailProduct/:_id" element={<DetailProduct />} />
          <Route path="/cart" element={<CartItems/>}/>
          <Route path="/Checkout" element={<Checkout/>}/>

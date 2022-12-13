@@ -129,9 +129,10 @@
   text-align: start;
   margin-left: -15px;
   
-
-
-
+}
+#linkparent{
+  text-decoration: none!important ;
+  
 }
 #navlink:hover{
   cursor: pointer;
@@ -281,7 +282,7 @@ margin-left: -30px;
 #signUp{
   background: linear-gradient(110deg, #96b0f9 60%, #9b9dfb 60%);
 
-  height: 640px;
+  height: 600px;
   width: 100%;
   position: absolute;
 
@@ -295,7 +296,7 @@ position: relative;
   width: 20rem;
   background-color: white;
   margin-left: 600px;
- height: 550px;
+ height: 400px;
  box-shadow: rgb(55, 81, 109) 0px 20px 30px -10px;
  background-color: rgb(224, 224, 240);
 }
@@ -309,22 +310,39 @@ position: relative;
 /* addproduct */
 #addproduct{
   margin-top: 25px;
-  background-color: rgb(164, 164, 45);
-  border-color: rgb(232, 232, 196);
+  background-color: rgb(186, 28, 28);
+  border-color: rgb(240, 52, 52);
+  width: 200px;
+  height: 50px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  
 }
+#addproduct:hover{
+  cursor: pointer;
+  background-color: rgb(204, 117, 117);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-decoration: underline;
+}
+
 #form_adding_product{
-    width: 800px;
-    height: 620px;
-    margin-top: 70px;
-    background: linear-gradient(110deg, #eee0b5 60%, #e8e099 60%);
-
+  width: 500px;
+  height: 400px;
+  margin-top: 100px;
+  background: linear-gradient(308deg, #f1f1f3 60%, #dfebf4 60%);
+  border: none;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  
 
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Emblema+One&family=Fredericka+the+Great&family=Noto+Sans:ital,wght@0,300;1,400&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
 .adding-product{
-  font-family: 'Bungee Shade', cursive;
-  color: rgb(82, 82, 25);
+  font-family: 'Rubik', sans-serif;
+  color: rgb(73, 112, 219);
   padding-left: 150px;
+  font-weight: bold;
 
  
 
@@ -518,7 +536,16 @@ text-align: center;
   flex-wrap: wrap;
   justify-content: space-around;
   z-index: 3;
+  width: 400px;
 
+
+}
+.productCard .btns_user1,
+.btns_admin1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  z-index: 3;
 
 }
 
@@ -544,9 +571,7 @@ text-align: center;
   
 } */
 
-/* .productCardMen {
-  margin-top: 1rem;
-} */
+
 
 .like {
   color: red;
@@ -556,7 +581,7 @@ text-align: center;
   margin-top: 1rem;
 } */
 
-.form_update{
+.form_update, .form_addproduct{
   position: absolute;
   z-index: 2;
   border: none;
@@ -566,11 +591,13 @@ text-align: center;
 
 
 #form_update_product{
-  width: 800px;
-  height: 500px;
+ 
+  width: 500px;
+  height: 400px;
   margin-top: 100px;
-  background: linear-gradient(110deg, #eee0b5 60%, #e8e099 60%);
+  background: linear-gradient(308deg, #f1f1f3 60%, #dfebf4 60%);
   border: none;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 
 
 }
@@ -778,6 +805,10 @@ text-align: center;
   color: #fff;
   font-size: 18px;
   margin-left: 0;
+
+}
+.ui.button{
+  margin-top: -100px;
 }
 
 /* cart */

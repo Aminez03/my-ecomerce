@@ -7,22 +7,35 @@ import Form from 'react-bootstrap/Form';
 
 
 const Login = () => {
-  const { user, loading } = useSelector((state) => state);
-  console.log(loading);
+  const { user, loading } = useSelector((state) => state.user);
+ 
+
+
+
   console.log(user);
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
+
+  
+
+    
    
     const dispatch=useDispatch();
     const handleSubmit=(e)=>{
          e.preventDefault();
          dispatch(Logine({email,password}))
+
     }
   return (
     <div id='Login'>
           { loading?(<h1>loading.......</h1>):
-            localStorage.getItem("token")?  <Navigate to="/profile" /> :(
+            localStorage.getItem("token")
+            ?  (<Navigate to="/profile" /> )
+            
+            
+            :(
+         
               <div className='login_Form '>   
 
             <Form onSubmit={handleSubmit}>
@@ -46,7 +59,10 @@ const Login = () => {
             Don't have a Account <Link to="/Signup"> Create Now </Link>
               </Form.Text>
           </Form>
-          </div> )
+          </div> 
+    
+          
+          )
 }
     </div> )
 }

@@ -103,17 +103,18 @@ import { Link } from 'react-router-dom';
         </CardContent> 
         }
         <CardActions disableSpacing>
-            {user && user.userRole === "user"?
-  
-           <div className="btns_user">
-            <Button variant="dark" onClick={()=>dispatch(addToCart(man._id, 1))} ><i style={{color:"white" , fontSize:'20px'}} className='fas fa-shopping-cart'></i></Button>
-            <Link to={`/detailProduct/${products._id}`}> <Button variant="dark"><i style={{color:"white",fontSize:'20px'}}class="fa-solid fa-magnifying-glass"></i></Button> </Link>
-           </div>
-            :
+            {user && user.userRole === "admin"?
+            
             <div className="btns_admin">
             <Button variant="danger" onClick={goSignUp}><i style={{color:"white" , fontSize:'20px'}} className='fas fa-shopping-cart buttoncartsignup'></i></Button>
             <Link to={`/detailProduct/${products._id}`}> <Button variant="dark" style={{marginLeft:"200px"}}><i style={{color:"white",fontSize:'20px' }}class="fa-solid fa-magnifying-glass"></i></Button> </Link>
             </div>
+  
+            :<div className="btns_user">
+            <Button variant="dark" onClick={()=>dispatch(addToCart(man._id, 1))} ><i style={{color:"white" , fontSize:'20px'}} className='fas fa-shopping-cart'></i></Button>
+            <Link to={`/detailProduct/${products._id}`}> <Button variant="dark"><i style={{color:"white",fontSize:'20px'}}class="fa-solid fa-magnifying-glass"></i></Button> </Link>
+           </div>
+            
             }
             
         </CardActions>

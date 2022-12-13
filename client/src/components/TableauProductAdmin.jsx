@@ -1,15 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import { styled, Table } from "@nextui-org/react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllProducts, removeProduct } from '../redux/action';
+import {  editeUser, getAllProducts, getAllUsers, removeProduct, removeUser } from '../redux/action';
 import { Tooltip  } from "@nextui-org/react";
 import { Link } from 'react-router-dom';
 import UpdateProduct from './UpdateProduct';
+import Block from './Block';
+import { Button } from 'react-bootstrap';
+
+
+
 
 const TableProductAdmin = () => {
   let { products } = useSelector((state) => state.product);
-  
+  let {users}=useSelector((state) => state.user);
+//   let {user}=useSelector((state) => state.user);
 
+//   console.log(user.blocking)
+//   const [blocking, setBlocking] = useState(user.blocking);
+
+
+
+//   const handleSubmit = () => {
+ 
+   
+//    if (blocking=='no') {
+//     setBlocking('yes')}
+// };
+
+// const handleblock=()=>{
+//   const editdUser = { _id: users._id, blocking};
+//   dispatch(editeUser(editdUser))
+
+// }
+
+  
      //dispatch getallproducts
   const dispatch = useDispatch();
 
@@ -26,6 +51,8 @@ const TableProductAdmin = () => {
   //useeffect
   useEffect(() => {
     dispatch(getAllProducts());
+    dispatch(getAllUsers())
+
  
 
   }, []);
@@ -151,6 +178,8 @@ const TableProductAdmin = () => {
 
   return (
     <div>
+      <br />
+      <h1 >list products</h1>
             <Table
       aria-label="Example static collection table"
       css={{
@@ -204,7 +233,7 @@ const TableProductAdmin = () => {
                 </IconButton>
               </Tooltip>
 
-              {/* <button  onClick={() => { dispatch(removeProduct(el._id)); dispatch(getAllProducts()) }}>delete</button> */}
+          
 
 
 
@@ -219,11 +248,70 @@ const TableProductAdmin = () => {
      
       </Table.Body> 
     </Table>
+    <hr />
+    <h1>List Users</h1>
+  
+    <Table
+      aria-label="Example static collection table"
+      css={{
+        position:"relative",
+        zIndex: "0",
+          height: "auto",
+          minWidth: "100%",
 
+        }}
+        selectionMode="single"
+        >
+      <Table.Header>
+      <Table.Column css={{fontSize:"20px", textAlign:"center"}}>FullName</Table.Column>
+      <Table.Column css={{fontSize:"20px", textAlign:"center", width:"40%"}}>Email</Table.Column>
+        <Table.Column css={{fontSize:"20px", textAlign:"center"}}>Adresse</Table.Column>
+        <Table.Column css={{fontSize:"20px", textAlign:"center"}}>Telephone</Table.Column>
+        <Table.Column css={{fontSize:"20px", textAlign:"center"}}>UserRole</Table.Column>
+        <Table.Column css={{fontSize:"20px", textAlign:"center"}}>Block</Table.Column>
 
+       
 
+        <Table.Column css={{fontSize:"20px", textAlign:"center"}}>ACTION</Table.Column>
+
+      </Table.Header> 
+      <Table.Body>
+      {users && users.map((el , i) => 
+          <Table.Row key={i}>
+          <Table.Cell css={{fontSize:"22px", fontWeight:"400"}}>{el.fullName}</Table.Cell>
+          <Table.Cell css={{fontSize:"20px", fontWeight:"400"}}>{el.email}</Table.Cell>
+          <Table.Cell css={{fontSize:"20px", fontWeight:"400"}} >{el.adresse}</Table.Cell>
+          <Table.Cell css={{fontSize:"20px", fontWeight:"400"}}>{el.telephone}</Table.Cell>
+          <Table.Cell css={{fontSize:"20px" , fontWeight:"600"}}>{el.userRole}</Table.Cell>
+          <Table.Cell css={{fontSize:"20px" , fontWeight:"600"}}>{el.blocking}</Table.Cell>
+
+         
+
+          <Table.Cell css={{ display:'flex', marginTop:'10px', marginLeft:'50px'}}>
+
+              <Tooltip
+                content="Delete product "
+                color="error"
+                onClick={() => { dispatch(removeUser(el._id)); dispatch(getAllUsers()) }}
+              >
+                <IconButton>
+                  <DeleteIcon size={30} fill="#FF0080" />
+                </IconButton>
+              </Tooltip>
+              <Tooltip>
+              <Block updatetUser={el} />
+              {/* <Button variant="primary" onClick={handleSubmit} >BLOCK</Button> */}
+              </Tooltip>
+              </Table.Cell>
+        </Table.Row>
+
+)}
+    </Table.Body> 
+    </Table>
     </div>
   )
+
+
 }
 
 export default TableProductAdmin
