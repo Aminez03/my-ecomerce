@@ -8,7 +8,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 import DeleteIcon from '@mui/icons-material/Delete';
-import { removeFromCart } from "../redux/action";
+import {  removeFromCart } from "../redux/action";
 import ItemQty from "./ItemQty";
 import { Link } from 'react-router-dom';
 
@@ -107,8 +107,8 @@ const Cart = () => {
                             {/* { (Number(result)>0)? */}
                             <td > 
                             <div className='Promotion' style={{marginLeft:"250px"}}>
-          <h2 className='priceCardPromo' style={{  textDecoration: "line-through", marginTop:"8px",color: "black"}}>{`$ ${el.price}`}</h2>
-          <h2 className='priceCardPromo'>{`(${el.promo}% off) `} </h2>
+                                <h2 className='priceCardPromo' style={{  textDecoration: "line-through", marginTop:"8px",color: "black"}}>{`$ ${el.price}`}</h2>
+                                <h2 className='priceCardPromo'>{`(${el.promo}% off) `} </h2>
                             </div>
                             <div className='priceCard' style={{marginLeft:"250px"}}> {`$ ${calculeRemise(el.price,el.promo).toFixed(2) }`}  </div>
                             </td>
@@ -147,11 +147,13 @@ const Cart = () => {
                         <Link to='/login'>
                             <button type="button"  onClick={goSignUp} class="btn btn-danger" style={{fontSize:"20px" ,marginLeft:'400px',color:"white", backgroundColor:"#C82333"}} >   Checkout</button>
                         </Link>
-                        
+                       
 
 }
                       
-                        <td></td>
+                        <td>
+                     
+                        </td>
                         
                     </tr>
                    

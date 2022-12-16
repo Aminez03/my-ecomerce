@@ -14,24 +14,24 @@ const init = {
             ...state,loading:true
         }
         case CARD_ADD_ITEM_SUCCESS:
-        const item = payload;
-        const existItem = state.cartItems.find(
-          (el) => el.product === item.product
-        );
-  
-        if (existItem) {
-          return {
-            ...state,
-            cartItems: state.cartItems.map((el) =>
-              el.product === existItem.product ? item : el
-            ),loading:false
-          };
-        } else {
-          return {
-            ...state,
-            cartItems: [...state.cartItems, item],loading:false
-          };
-        }
+          const item = payload;
+          const existItem = state.cartItems.find(
+            (el) => el.product === item.product
+          );
+    
+          if (existItem) {
+            return {
+              ...state,
+              cartItems: state.cartItems.map((el) =>
+                el.product === existItem.product ? item : el
+              ),
+            };
+          } else {
+            return {
+              ...state,
+              cartItems: [...state.cartItems, item],
+            };
+          }
         case CARD_ADD_ITEM_FAIL:
             return {
                 ...state, error:payload,loading:false

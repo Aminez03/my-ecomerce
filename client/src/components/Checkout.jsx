@@ -15,7 +15,7 @@ const Checkout = () => {
     console.log(user)
  
  
-
+    const factureSend =()=>alert("   your facture has been send    ")
 
 
     const [result, setResult] = useState();
@@ -178,48 +178,40 @@ const Checkout = () => {
         </div>
 
         <div>
-
-        <form classname="facture" id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xaykrdve" method="post">
+        <form  id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xnqreyke" method="POST">
         <h2 style={{fontSize:"40px", color:"red"}}> Facture</h2>
-        <fieldset id="fs-frm-inputs" >
-
-
-        <input type="text" name="name" id="full-name" value={fullName} required=""/>
-
-        <input type="email" name="email" id="email-address" value={email} required=""/>
-        <input type="text" name="telephone" id="email-address" value={telephone} required=""/>
-        <input type="text" name="adresse" id="email-address" value={adresse} required=""/>
-
-        <textarea rows="10" name="Product" id="message" defaultValue={
-            cartItems.map(data => 
+    <fieldset id="fs-frm-inputs">
+   
+    <input type="email" name="email" id="email-address" value={email} required=""/>
         
-        'titre:'+data.title+', Qauantity:'+data.qty+ ", price:"+calculeRemise(data.price,data.promo).toFixed(2)+'$'+'\r'
-           
+        <input type="text" name="telephone" id="email-address" value={telephone} required=""/>
+        
+        <input type="text" name="adresse" id="email-address" value={adresse} required=""/>
+    
+    <textarea rows="5" name="message" id="message" placeholder="Message" required=""
+        defaultValue={
+        cartItems.map(data => 
+    
+    'titre:'+data.title+', Qauantity:'+data.qty+ ", price:"+calculeRemise(data.price,data.promo).toFixed(2)+'$'+'\r'
+       
 
-            ) }
-            
-            style={{width:"400px", marginLeft:"100px"}}
-            
-            >
+        ) }
+        
+        style={{width:"350px", marginLeft:"100px"}}
+    >
 
-        </textarea>
-        <textarea rows="1" name="Total" id="message" value={`${total} $`} 
-         style={{width:"400px", marginLeft:"100px"}}
+    </textarea>
+    <textarea rows="1" name="Total" id="message" value={`${total} $`} 
+         style={{width:"350px", marginLeft:"100px"}}
         >
 
-
         </textarea>
-
-
-
-
-
-
-        </fieldset>
-        <input type="submit" value="Submit"  id="input-submit"></input>
-        </form>
+    </fieldset>
+  <input type="submit" value="Submit"  id="input-submit" style={{marginLeft:"500px"}} onClick={factureSend} ></input>
+  </form>
 
         </div>
+
 
 
 

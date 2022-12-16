@@ -11,7 +11,9 @@ import ListProduct from "./ListProduct";
 
 export const Profile = ({products}) => {
   const { user, loading } = useSelector((state) => state.user);
-  console.log( user.blocking)
+  
+  const { cartItems } = useSelector((state) => state.cart);
+  console.log(cartItems )
 
 
 

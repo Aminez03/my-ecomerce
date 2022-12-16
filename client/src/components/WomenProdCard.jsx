@@ -48,7 +48,7 @@ import { Link } from 'react-router-dom';
 
   
     return (
-      <div className='productCardMen'>
+      <div className='productCardWomen'>
   
       <Card sx={{ width: "22rem" , height:"47rem" }}>
         <CardHeader

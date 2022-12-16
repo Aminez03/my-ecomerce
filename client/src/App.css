@@ -480,12 +480,16 @@ text-align: center;
 @import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Bungee+Shade&family=Emblema+One&family=Fira+Sans+Condensed:ital,wght@1,300;1,400&family=Fredericka+the+Great&family=Noto+Sans:ital,wght@0,300;1,400&family=Overpass:wght@500&family=Pacifico&family=Raleway:wght@300&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Mono:ital@1&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Solway:wght@400;500&family=Walter+Turncoat&display=swap');
 .title{
   color: rgb(78, 76, 76)!important;
-  width: '10rem';
+
   height:"4rem" ;
   font-weight: 500!important;
   font-family: 'Average Sans', sans-serif;
   font-size: 30px!important;
-
+    width: 300px!important;
+    text-align: center;
+    padding-top: -10px;
+    padding-left: -120px;
+    margin-left: -10px!important;
 
 }
 .priceCard{
@@ -577,9 +581,9 @@ text-align: center;
   color: red;
 }
 
-/* .productCardWomen {
-  margin-top: 1rem;
-} */
+.productCardWomen {
+  margin-top: 2rem;
+} 
 
 .form_update, .form_addproduct{
   position: absolute;
@@ -821,7 +825,7 @@ text-align: center;
 /* Fouter  */
 .socialMed{
   text-align:center;
-  margin-top: -50px;
+  margin-top: 0px;
   padding-top: -50px;
   width: 100%;
   height: 50%!important ;
@@ -838,5 +842,12 @@ text-align: center;
 }
 .socialMed i:hover{
   color: #1715ae;
+}
+.alert{
+  margin-top: -200px;
+  width:400px;
+  text-align: start;
+
+  float: right;
 }
 

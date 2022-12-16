@@ -51,7 +51,7 @@ const ProductCard = ({product}) => {
     
     <Card.Body>
         <div className="title">
-            <Card.Title  style={{fontSize: "22px" , fontWeight:"500"}}>{product.title}</Card.Title>
+            <Card.Title  style={{fontSize: "22px" , fontWeight:"500"}} >{product.title}</Card.Title>
         </div>
         { (Number(result)>0)?
         <div>

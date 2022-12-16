@@ -1,5 +1,6 @@
 import axios from "axios";
-import { CARD_ADD_ITEM, CARD_ADD_ITEM_FAIL, CARD_ADD_ITEM_SUCCESS, CARD_REMOVE_ITEM,INCREMENT, DECREMENT, DETAILPRODUCT_FAIL, DETAILPRODUCT_SUCCESS, GET_PROFILE, GET_PROFILE_FAIL, GET_PROFILE_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, SIGN_UP, SIGN_UP_FAIL, SIGN_UP_SUCCESS, GET_ALLUSERS, DELETEUSER, BLOCKUSER } from "./actionTypes"
+
+import { CARD_ADD_ITEM, CARD_ADD_ITEM_FAIL, CARD_ADD_ITEM_SUCCESS, CARD_REMOVE_ITEM,INCREMENT, DECREMENT, DETAILPRODUCT_FAIL, DETAILPRODUCT_SUCCESS, GET_PROFILE, GET_PROFILE_FAIL, GET_PROFILE_SUCCESS, LOGIN, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, SIGN_UP, SIGN_UP_FAIL, SIGN_UP_SUCCESS, GET_ALLUSERS, DELETEUSER, BLOCKUSER, DELETECART } from "./actionTypes"
 import {ADDPRODUCT, ADDPRODUCT_FAIL, ADDPRODUCT_SUCCESS, DELETEPRODUCT, DETAILPRODUCT, GETPRODUCTS, GET_MEN_PRODUCT, GET_WOMEN_PRODUCT, UPDATEPRODUCT} from "./actionTypes"
 
 // action user 
@@ -131,7 +132,7 @@ export const userLogOut = () => {
 
 
 // action product
-
+// add product 
 export const createProduct = (newProduct) => async (dispatch) => {
     dispatch({ type: ADDPRODUCT });
     try {
@@ -262,23 +263,22 @@ export const removeProduct = (_id) => async(dispatch) => {
 export const addToCart = (_id, qty) => async (dispatch) => {
   dispatch({type : CARD_ADD_ITEM})
   try {
-    const res = await axios.get(`/product/getOneProduct/${_id}`);
+    const { data } = await axios.get(`/product/getOneProduct/${_id}`);
     dispatch({
       type: CARD_ADD_ITEM_SUCCESS,
       payload: {
-        product: res.data._id,
-        title: res.data.title,
-        promo: res.data.promo,
-        image: res.data.image,
-        price: res.data.price,
+        product: data._id,
+        title: data.title,
+        promo: data.promo,
+        image: data.image,
+        price: data.price,
         qty
       },
-    })
-
+    });
   } catch (error) {
     dispatch({
       type: CARD_ADD_ITEM_FAIL,
-      payload: error.response.data,
+      payload: error.data,
     });  
   }
 ;
@@ -291,6 +291,7 @@ export const removeFromCart = (id) => (dispatch) => {
     payload: id,
   });
 };
+
 // incrementer
 export const incrementQty = (cartItem) => (dispatch) => {
   dispatch(

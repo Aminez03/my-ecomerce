@@ -52,8 +52,6 @@ export const GETCARDTITEM = "GETCARDTITEM";
 
 
 
-
-
 export const CARD_REMOVE_ITEM = 'CARD_REMOVE_ITEM';
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
